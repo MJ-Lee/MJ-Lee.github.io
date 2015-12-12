@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[zhenghao's tech blog]]></title>
   <subtitle><![CDATA[一个前端工程师的回国之路]]></subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
-  <link href="http://zhenghao.work/blog/"/>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://zhenghao.work/"/>
   <updated>2015-12-12T14:32:23.000Z</updated>
-  <id>http://zhenghao.work/blog/</id>
+  <id>http://zhenghao.work/</id>
   
   <author>
     <name><![CDATA[从巴黎回来]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[从巴黎回来，]]></title>
-    <link href="http://zhenghao.work/blog/2015/12/12/%E4%BB%8E%E5%B7%B4%E9%BB%8E%E5%9B%9E%E6%9D%A5/"/>
-    <id>http://zhenghao.work/blog/2015/12/12/从巴黎回来/</id>
+    <link href="http://zhenghao.work/2015/12/12/%E4%BB%8E%E5%B7%B4%E9%BB%8E%E5%9B%9E%E6%9D%A5/"/>
+    <id>http://zhenghao.work/2015/12/12/从巴黎回来/</id>
     <published>2015-12-12T06:29:05.000Z</published>
     <updated>2015-12-12T14:32:23.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u521D_u8877"><a href="#u521D_u8877" class="headerlink" title="初衷"></a>初衷</h2><p>回国有段时间了，以前并不是很喜欢写blog。可是当我看到这么多技术牛人的博客的时候，又怎么能不为所动。其实写写博客也是对自己成长历程的记载，我也应该把我学到的东西都记录下来，借助网络与大家共同讨论学习，希望各位能多多关照。技术blog随后奉上。另一方面，更何况我也是个比较喜欢折腾的人。比如，回来以后在VPS上搭VPN访问一些资源（你们懂）。 再比如目前这个博客是用hexo搭建的静态个人博客，稍微修改了下Theme的侧边栏。虽然hexo很赞很方便，目前也发展的比较成熟了，但所谓求人不如求己，以后还是打算用nodejs + markdown实现个原生的静态blog。  </p>
@@ -36,9 +36,9 @@
     <![CDATA[<h2 id="u521D_u8877"><a href="#u521D_u8877" class="headerlink" title="初衷"></a>初衷</h2><p>回国有段时间了，以前并不是很喜欢写blog。可是当我看到这么多技术牛人的博客的时候，又怎么能不为所动。其]]>
     </summary>
     
-      <category term="碎碎念" scheme="http://zhenghao.work/blog/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <category term="碎碎念" scheme="http://zhenghao.work/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
-      <category term="随笔" scheme="http://zhenghao.work/blog/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://zhenghao.work/categories/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
