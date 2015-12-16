@@ -104,7 +104,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+						<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/layout/" style="font-size: 10px;">layout</a> <a href="/tags/standard/" style="font-size: 10px;">standard</a> <a href="/tags/布局/" style="font-size: 10px;">布局</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
 					</div>
 				</section>
 				
@@ -159,6 +159,100 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-relationship-layout" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/15/relationship-layout/" class="article-date">
+  	<time datetime="2015-12-15T08:32:19.000Z" itemprop="datePublished">2015-12-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/15/relationship-layout/">diasplay与position、float之间的关系</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><blockquote>
+<p>9.7 Relationships between ’display’, ’position’, and ’float’<br>The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  </p>
+<ol>
+<li>If ’display’ has the value ’none’, then ’position’ and ’float’ do not apply. In this case, the element generates no box.  </li>
+<li>Otherwise, if ’position’ has the value ’absolute’ or ’fixed’, the box is absolutely positioned, the computed value of ’float’ is ’none’, and display is set according to the table below. The position of the box will be determined by the ’top’, ’right’, ’bottom’ and ’left’ properties and the box’s containing block.  </li>
+<li>Otherwise, if ’float’ has a value other than ’none’, the box is floated and ’display’ is set according to the table below.  </li>
+<li>Otherwise, if the element is the root element, ’display’ is set according to the table below, except that it is undefined in CSS 2.1 whether a specified value of ’list-item’ becomes a computed value of ’block’ or ’list-item’.  </li>
+<li>Otherwise, the remaining ’display’ property values apply as specified.  </li>
+</ol>
+</blockquote>
+<p>display计算转换表：<br><img src="/img/relation-layout-compute-table.png" width="600" height="200" alt="display计算转换表" align="center"></p>
+<h2 id="u6211_u7684_u7406_u89E3"><a href="#u6211_u7684_u7406_u89E3" class="headerlink" title="我的理解"></a>我的理解</h2><p>1，如果 display：none，那么元素不生成盒子box；<br>2，display不为none，position为absolute或者fixed，那么display会根据下表设置。<br>3，display不为none，position为static或者relative，float不为none，那么display会根据下表设置。<br>4，display不为none，position为static或者relative，float为none，如果元素为根元素，那么display会根据下表设置。<br>5，display不为none，position为static或者relative，float为none，元素不为根元素，display为你设置的值。  </p>
+<p>码字看着太累了，做个流程图！<br><img src="/img/relation-layout-flow.png" width="600" height="500" alt="display计算流程图" align="center"></p>
+<p>另外这个display对于寻找containing block还是有一定影响的。<br>看这个容易被大家忽视的例子：  </p>
+<pre><code>&lt;P id=&quot;p2&quot;&gt;This is text &lt;EM id=&quot;em1&quot;&gt; in the&lt;STRONG id=&quot;strong1&quot;&gt;second&lt;/STRONG&gt; paragraph.&lt;/EM&gt;&lt;/P&gt;
+</code></pre><p>在没有做任何修改时，<code>&lt;EM&gt;</code>和<code>&lt;STRONG&gt;</code>的包含块containing block都是<code>&lt;p&gt;</code>；<br>当给<code>&lt;EM&gt;</code>添加了position:absolute;以后<code>&lt;STRONG&gt;</code>的包含块containing block变成了<code>&lt;EM&gt;</code>；<br>这是因为根据规则2，<code>&lt;EM&gt;</code>的display属性发生了改变。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/layout/">layout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/standard/">standard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+	</div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+        var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+        }
+        </script>
+     
+
   
     <article id="post-从巴黎回来" class="article article-type-post" itemscope itemprop="blogPost">
   

@@ -3,18 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tags | Michael&#39;s tech blog</title>
+  <title>diasplay与position、float之间的关系 | Michael&#39;s tech blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="热爱前端技术，热爱生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://zhenghao.work/tags/index.html">
+  <meta name="description" content="CSS2中的规范原文
+9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+
+If ’dis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="diasplay与position、float之间的关系">
+<meta property="og:url" content="http://zhenghao.work/2015/12/15/relationship-layout/index.html">
 <meta property="og:site_name" content="Michael's tech blog">
-<meta property="og:description" content="热爱前端技术，热爱生活">
-<meta property="og:updated_time" content="2015-12-12T13:02:06.000Z">
+<meta property="og:description" content="CSS2中的规范原文
+9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+
+If ’dis">
+<meta property="og:image" content="http://zhenghao.work/img/relation-layout-compute-table.png">
+<meta property="og:image" content="http://zhenghao.work/img/relation-layout-flow.png">
+<meta property="og:updated_time" content="2015-12-16T14:48:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="热爱前端技术，热爱生活">
+<meta name="twitter:title" content="diasplay与position、float之间的关系">
+<meta name="twitter:description" content="CSS2中的规范原文
+9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+
+If ’dis">
   
     <link rel="alternative" href="/atom.xml" title="Michael&#39;s tech blog" type="application/atom+xml">
   
@@ -159,11 +170,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-relationship-layout" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-  	<time datetime="2015-12-12T13:02:05.000Z" itemprop="datePublished">2015-12-12</time>
+      <a href="/2015/12/15/relationship-layout/" class="article-date">
+  	<time datetime="2015-12-15T08:32:19.000Z" itemprop="datePublished">2015-12-15</time>
 </a>
     </div>
   
@@ -176,7 +187,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      diasplay与position、float之间的关系
     </h1>
   
 
@@ -186,6 +197,10 @@
         
 
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/layout/">layout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/standard/">standard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+	</div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -193,122 +208,98 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-	.article-meta {
-		display: none;
-	}
-	#container .article .article-title {
-		padding-right: 0;
-	}
-	.article-header {
-		padding: 0;
-		padding-top: 26px;
-		border-left: none;
-		text-align: center;
-	}
-	.article-header:hover {
-		border-left: none;
-	}
-	.article-title {
-		font-size: 1.6em
-	}
-	.article-meta {
-		display: none;
-	}
-	.article-entry hr {
-		margin: 0;
-	}
-	#container .article-info-post.article-info {
-  	display: none;
-  	}
-	#container .article .article-title {
-	padding: 0;
-	}
-</style>
+        <h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><blockquote>
+<p>9.7 Relationships between ’display’, ’position’, and ’float’<br>The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  </p>
+<ol>
+<li>If ’display’ has the value ’none’, then ’position’ and ’float’ do not apply. In this case, the element generates no box.  </li>
+<li>Otherwise, if ’position’ has the value ’absolute’ or ’fixed’, the box is absolutely positioned, the computed value of ’float’ is ’none’, and display is set according to the table below. The position of the box will be determined by the ’top’, ’right’, ’bottom’ and ’left’ properties and the box’s containing block.  </li>
+<li>Otherwise, if ’float’ has a value other than ’none’, the box is floated and ’display’ is set according to the table below.  </li>
+<li>Otherwise, if the element is the root element, ’display’ is set according to the table below, except that it is undefined in CSS 2.1 whether a specified value of ’list-item’ becomes a computed value of ’block’ or ’list-item’.  </li>
+<li>Otherwise, the remaining ’display’ property values apply as specified.  </li>
+</ol>
+</blockquote>
+<p>display计算转换表：<br><img src="/img/relation-layout-compute-table.png" width="600" height="200" alt="display计算转换表" align="center"></p>
+<h2 id="u6211_u7684_u7406_u89E3"><a href="#u6211_u7684_u7406_u89E3" class="headerlink" title="我的理解"></a>我的理解</h2><p>1，如果 display：none，那么元素不生成盒子box；<br>2，display不为none，position为absolute或者fixed，那么display会根据下表设置。<br>3，display不为none，position为static或者relative，float不为none，那么display会根据下表设置。<br>4，display不为none，position为static或者relative，float为none，如果元素为根元素，那么display会根据下表设置。<br>5，display不为none，position为static或者relative，float为none，元素不为根元素，display为你设置的值。  </p>
+<p>码字看着太累了，做个流程图！<br><img src="/img/relation-layout-flow.png" width="600" height="500" alt="display计算流程图" align="center"></p>
+<p>另外这个display对于寻找containing block还是有一定影响的。<br>看这个容易被大家忽视的例子：  </p>
+<pre><code>&lt;P id=&quot;p2&quot;&gt;This is text &lt;EM id=&quot;em1&quot;&gt; in the&lt;STRONG id=&quot;strong1&quot;&gt;second&lt;/STRONG&gt; paragraph.&lt;/EM&gt;&lt;/P&gt;
+</code></pre><p>在没有做任何修改时，<code>&lt;EM&gt;</code>和<code>&lt;STRONG&gt;</code>的包含块containing block都是<code>&lt;p&gt;</code>；<br>当给<code>&lt;EM&gt;</code>添加了position:absolute;以后<code>&lt;STRONG&gt;</code>的包含块containing block变成了<code>&lt;EM&gt;</code>；<br>这是因为根据规则2，<code>&lt;EM&gt;</code>的display属性发生了改变。</p>
 
-
-	<!-- Tag Cloud Page -->
-	<hr>
-	<br>
-	<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
-
-	<p class="count"></p>
-
-	<div class="tags">
-	  <a href="/tags/css/" style="font-size: 16px; color: #808080">css</a> <a href="/tags/layout/" style="font-size: 16px; color: #808080">layout</a> <a href="/tags/standard/" style="font-size: 16px; color: #808080">standard</a> <a href="/tags/布局/" style="font-size: 16px; color: #808080">布局</a> <a href="/tags/碎碎念/" style="font-size: 16px; color: #808080">碎碎念</a> <a href="/tags/规范/" style="font-size: 16px; color: #808080">规范</a>
-	</div>
-	<style type="text/css">
-		.category-list li{
-			display: inline-block;
-			font-size: 1.2em;
-			margin: 0 1em .5em 0;
-			border: 1px solid lightgray;
-			padding: 4px;
-		}
-		.category-list a {
-			color: gray;
-		}
-		.category-list-item:hover a {
-			color: gray;
-			text-decoration: none;
-			font-weight: bold;
-		}
-		.category-list-count {
-			margin-left: 2px;
-			font-size: .9em;
-		}
-		.article-entry ul li:before{
-			display: none;
-		}
-		.article-inner  {
-			text-align: center;
-		}
-		.tags {
-			max-width: 40em;
-			margin: 2em auto;
-			margin-top: 0em;
-		}
-		.tags a {
-			margin-right: 1em;
-			line-height: 65px;
-			border-bottom: 1px solid gray;
-			white-space: nowrap;
-		}
-		.tags a:hover {
-			font-style: italic;
-			border-bottom: 2px solid black;
-			text-decoration: none;
-		}
-		#count > span {
-			margin: auto .2em;
-			font-weight: bold;
-		}
-	</style>
-
-	<!-- Count tags and categories -->
-	<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-	<p id="count">
-			已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-			共计<span><script>document.write($(".tags > a").length)</script></span>个标签。
-	</p>
-	<script>
-	$('#count').appendTo('.count');
-	</script>
-
-
-          
-        
       
     </div>
     
   </div>
   
     
+<div class="copyright">
+  <p><span>本文标题:</span><a href="/2015/12/15/relationship-layout/">diasplay与position、float之间的关系</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 从巴黎回来 的个人博客">从巴黎回来</a></p>
+  <p><span>发布时间:</span>2015年12月15日 - 16时32分</p>
+  <p><span>最后更新:</span>2015年12月16日 - 22时48分</p>
+  <p>
+    <span>原始链接:</span><a class="post-url" href="/2015/12/15/relationship-layout/" title="diasplay与position、float之间的关系">http://zhenghao.work/2015/12/15/relationship-layout/</a>
+    <span class="copy-path" data-clipboard-text="原文: http://zhenghao.work/2015/12/15/relationship-layout/　　作者: 从巴黎回来" title="点击复制文章链接">
+        <i class="fa fa-clipboard"></i>
+    </span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
+  <script src="/js/clipboard.min.js"></script>
+  <script> var clipboard = new Clipboard('.copy-path'); </script>
+</div>
 
 
+
+
+<nav id="article-nav">
+  
+  
+    <div id="article-nav-older" class="article-nav-title">
+      <a href="/2015/12/12/从巴黎回来/">
+        从巴黎回来
+      </a>
+    </div>
+  
+</nav>
 
   
 </article>
+
+<!-- 默认显示文章目录，在文章---前输入toc: false关闭目录 -->
+<!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
+<div id="toc" class="toc-article">
+<strong class="toc-title">文章目录</strong>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><span class="toc-number">1.</span> <span class="toc-text">CSS2中的规范原文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6211_u7684_u7406_u89E3"><span class="toc-number">2.</span> <span class="toc-text">我的理解</span></a></li></ol>
+</div>
+<style type="text/css">
+  .left-col .switch-btn {
+    display: none;
+  }
+  .left-col .switch-area {
+    display: none;
+  }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script type="text/javascript">
+  var toc_button= document.getElementById("tocButton");
+  var toc_div= document.getElementById("toc");
+  /* Show or hide toc when click on tocButton.
+  通过点击设置的按钮显示或者隐藏文章目录.*/
+  toc_button.onclick=function(){
+  if(toc_div.style.display=="none"){
+  toc_div.style.display="block";
+  toc_button.value="隐藏目录";
+  document.getElementById("switch-btn").style.display="none";
+  document.getElementById("switch-area").style.display="none";
+  }
+  else{
+  toc_div.style.display="none";
+  toc_button.value="显示目录";
+  document.getElementById("switch-btn").style.display="block";
+  document.getElementById("switch-area").style.display="block";
+  }
+  }
+</script>
 
 
 <div class="share">
@@ -332,7 +323,7 @@
   
   <div class="duoshuo" id="comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="tags/index.html" data-title="tags" data-url="http://zhenghao.work/tags/index.html"></div>
+	<div class="ds-thread" data-thread-key="relationship-layout" data-title="diasplay与position、float之间的关系" data-url="http://zhenghao.work/2015/12/15/relationship-layout/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -368,6 +359,17 @@
     </div>
 
 
+  
+  
+    <div  class="post-nav-button">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2015/12/12/从巴黎回来/" title="下一篇: 从巴黎回来">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  
+    
+
 
 
     
@@ -378,7 +380,7 @@
         mathjax: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
