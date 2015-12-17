@@ -108,7 +108,7 @@
     <link href="http://zhenghao.work/2015/12/15/relationship-layout/"/>
     <id>http://zhenghao.work/2015/12/15/relationship-layout/</id>
     <published>2015-12-15T08:32:19.000Z</published>
-    <updated>2015-12-16T14:48:57.000Z</updated>
+    <updated>2015-12-17T15:33:27.000Z</updated>
     <content type="html"><![CDATA[<h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><blockquote>
 <p>9.7 Relationships between ’display’, ’position’, and ’float’<br>The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  </p>
 <ol>
@@ -122,7 +122,7 @@
 <p>display计算转换表：<br><img src="/img/relation-layout-compute-table.png" width="600" height="200" alt="display计算转换表" align="center"></p>
 <h2 id="u6211_u7684_u7406_u89E3"><a href="#u6211_u7684_u7406_u89E3" class="headerlink" title="我的理解"></a>我的理解</h2><p>1，如果 display：none，那么元素不生成盒子box；<br>2，display不为none，position为absolute或者fixed，那么display会根据下表设置。<br>3，display不为none，position为static或者relative，float不为none，那么display会根据下表设置。<br>4，display不为none，position为static或者relative，float为none，如果元素为根元素，那么display会根据下表设置。<br>5，display不为none，position为static或者relative，float为none，元素不为根元素，display为你设置的值。  </p>
 <p>码字看着太累了，做个流程图！<br><img src="/img/relation-layout-flow.png" width="600" height="500" alt="display计算流程图" align="center"></p>
-<p>另外这个display对于寻找containing block还是有一定影响的。<br>看这个容易被大家忽视的例子：  </p>
+<h2 id="u5E94_u7528"><a href="#u5E94_u7528" class="headerlink" title="应用"></a>应用</h2><p>这个display对于寻找containing block还是有一定影响的。<br>看这个容易被大家忽视的例子：  </p>
 <pre><code>&lt;P id=&quot;p2&quot;&gt;This is text &lt;EM id=&quot;em1&quot;&gt; in the&lt;STRONG id=&quot;strong1&quot;&gt;second&lt;/STRONG&gt; paragraph.&lt;/EM&gt;&lt;/P&gt;
 </code></pre><p>在没有做任何修改时，<code>&lt;EM&gt;</code>和<code>&lt;STRONG&gt;</code>的包含块containing block都是<code>&lt;p&gt;</code>；<br>当给<code>&lt;EM&gt;</code>添加了position:absolute;以后<code>&lt;STRONG&gt;</code>的包含块containing block变成了<code>&lt;EM&gt;</code>；<br>这是因为根据规则2，<code>&lt;EM&gt;</code>的display属性发生了改变。</p>
 ]]></content>
