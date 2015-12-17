@@ -4,7 +4,7 @@
   <subtitle><![CDATA[前端工程师，全栈尝试者，技术，英文，生活]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zhenghao.work/"/>
-  <updated>2015-12-17T15:36:48.000Z</updated>
+  <updated>2015-12-17T16:12:05.000Z</updated>
   <id>http://zhenghao.work/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://zhenghao.work/2015/12/17/padding-feature/"/>
     <id>http://zhenghao.work/2015/12/17/padding-feature/</id>
     <published>2015-12-17T14:32:01.000Z</published>
-    <updated>2015-12-17T15:36:48.000Z</updated>
+    <updated>2015-12-17T16:12:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><p>在css2关于padding的规范有一个容易被忽略的属性，描述如下</p>
 <blockquote>
 <p><code>&lt;percentage&gt;</code> The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’padding-bottom’. If the containing block’s width depends on this element, then the resulting layout is undefined in CSS 2.1.</p>
@@ -27,7 +27,7 @@
 <p>意思是说padding的百分数值是根据其元素包含块containing block的width决定的。即padding的100%=包含块containing block的宽度。</p>
 <h2 id="u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62"><a href="#u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62" class="headerlink" title="妙用-自适应的正方形"></a>妙用-自适应的正方形</h2><p>这个属性隐藏的比较深，一般来说没有应用到它的时候。而它的一个妙用是来画自适应的正方形。  </p>
 <p>一个通常用js的做法来画正方形的方式是获取自适应元素的宽度，再设置等宽的高度。  </p>
-<p>下面说说如何用css里这个神奇的padding来画自适应的正方形。至于它在现实中的使用意义我不想讨论，不过博主之前确实被问住了（知识面宽广也有点弊端，就是对这种细节可能钻的不深，所以放在这里补补。。。不过话说回来这确实太片面了，csstrick里还有人用div画五角星呢，这真的有必要么。。。）</p>
+<p>下面说说如何用css里这个神奇的padding来画自适应的正方形。至于它在现实中的使用意义我不想讨论，不过博主之前确实被问住了（能学到知识还是好的，所以在此补补）</p>
 <h3 id="u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F"><a href="#u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F" class="headerlink" title="方法一，最普通的方式"></a>方法一，最普通的方式</h3><pre><code>.box {
     width: 100%;
     background-color: red;
@@ -143,11 +143,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[JS核心-原型链-从实例角度看原型链]]></title>
-    <link href="http://zhenghao.work/2015/12/12/JS%E6%A0%B8%E5%BF%83-%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-    <id>http://zhenghao.work/2015/12/12/JS核心-原型链/</id>
-    <published>2015-12-12T13:45:11.000Z</published>
-    <updated>2015-12-17T14:34:35.000Z</updated>
+    <title><![CDATA[CSS核心-BFC]]></title>
+    <link href="http://zhenghao.work/2015/12/14/CSS%E6%A0%B8%E5%BF%83-BFC/"/>
+    <id>http://zhenghao.work/2015/12/14/CSS核心-BFC/</id>
+    <published>2015-12-14T08:27:06.000Z</published>
+    <updated>2015-12-14T08:37:03.000Z</updated>
     <content type="html"><![CDATA[<p>待续</p>
 ]]></content>
     <summary type="html">
@@ -155,11 +155,73 @@
 ]]>
     </summary>
     
-      <category term="javascript" scheme="http://zhenghao.work/tags/javascript/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS核心-视觉格式模型]]></title>
+    <link href="http://zhenghao.work/2015/12/12/CSS%E6%A0%B8%E5%BF%83-%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://zhenghao.work/2015/12/12/CSS核心-视觉格式模型/</id>
+    <published>2015-12-12T13:47:06.000Z</published>
+    <updated>2015-12-14T08:37:04.000Z</updated>
+    <content type="html"><![CDATA[<p>待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>待续</p>
+]]>
+    </summary>
     
-      <category term="js" scheme="http://zhenghao.work/tags/js/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS核心-盒模型]]></title>
+    <link href="http://zhenghao.work/2015/12/12/CSS%E6%A0%B8%E5%BF%83-%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://zhenghao.work/2015/12/12/CSS核心-盒模型/</id>
+    <published>2015-12-12T13:46:34.000Z</published>
+    <updated>2015-12-14T08:37:05.000Z</updated>
+    <content type="html"><![CDATA[<p>待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>待续</p>
+]]>
+    </summary>
     
-      <category term="prototype" scheme="http://zhenghao.work/tags/prototype/"/>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[CSS核心-布局]]></title>
+    <link href="http://zhenghao.work/2015/12/12/CSS%E6%A0%B8%E5%BF%83-%E5%B8%83%E5%B1%80/"/>
+    <id>http://zhenghao.work/2015/12/12/CSS核心-布局/</id>
+    <published>2015-12-12T13:46:08.000Z</published>
+    <updated>2015-12-14T08:37:05.000Z</updated>
+    <content type="html"><![CDATA[<p>待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>待续</p>
+]]>
+    </summary>
+    
+      <category term="CSS" scheme="http://zhenghao.work/tags/CSS/"/>
+    
+      <category term="layout" scheme="http://zhenghao.work/tags/layout/"/>
+    
+      <category term="布局" scheme="http://zhenghao.work/tags/%E5%B8%83%E5%B1%80/"/>
+    
+      <category term="CSS规范" scheme="http://zhenghao.work/categories/CSS%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JS核心-原型链-从实例角度看原型链]]></title>
+    <link href="http://zhenghao.work/2015/12/12/JS%E6%A0%B8%E5%BF%83-%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://zhenghao.work/2015/12/12/JS核心-原型链/</id>
+    <published>2015-12-12T13:45:11.000Z</published>
+    <updated>2015-12-17T15:58:21.000Z</updated>
+    <content type="html"><![CDATA[<p>我最近比较忙。。。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我最近比较忙。。。</p>
+]]>
+    </summary>
     
   </entry>
   
@@ -168,7 +230,7 @@
     <link href="http://zhenghao.work/2015/12/12/%E4%BB%8E%E5%B7%B4%E9%BB%8E%E5%9B%9E%E6%9D%A5/"/>
     <id>http://zhenghao.work/2015/12/12/从巴黎回来/</id>
     <published>2015-12-12T06:29:05.000Z</published>
-    <updated>2015-12-14T16:44:22.000Z</updated>
+    <updated>2015-12-17T16:10:40.000Z</updated>
     <content type="html"><![CDATA[<h2 id="u521D_u8877"><a href="#u521D_u8877" class="headerlink" title="初衷"></a>初衷</h2><p>回国有段时间了，以前并不是很喜欢写blog。可是当我看到这么多技术牛人的博客的时候，又怎么能不为所动。其实写写博客也是对自己成长历程的记载，我也应该把我学到的东西都记录下来，借助网络与大家共同讨论学习，希望各位能多多关照。技术blog会慢慢补上。另一方面，更何况我也是个比较喜欢折腾的人。比如，回来以后在VPS上搭VPN访问一些资源（你们懂）。 再比如目前这个博客是用hexo搭建的静态个人博客，稍微修改了下Theme的侧边栏。虽然hexo很赞很方便，目前也发展的比较成熟了，但所谓求人不如求己，以后还是打算用nodejs + markdown实现个原生的静态blog。  </p>
 <p>为什么这么想呢？commonjs和es规范以及SSJS的发展对我们前端工程师来说就是曙光。我想要重写博客系统也是想再深入学习nodejs，尝试全栈，虽然以前用nodejs做过简单代理服务器，但理解不够深刻，只能算是查着API文档的应用级别。  </p>
 <h2 id="u6846_u67B6_u4E71_u4E16_uFF0C_u4F55_u53BB_u4F55_u4ECE"><a href="#u6846_u67B6_u4E71_u4E16_uFF0C_u4F55_u53BB_u4F55_u4ECE" class="headerlink" title="框架乱世，何去何从"></a>框架乱世，何去何从</h2><p>博主也是用过一些主流框架，例如GWT、Angularjs、bootstrap、jQuery等等，先不说设计模式的应用和架构的搭建这些方面的好与坏；无论怎样我们做到最后都是不得不深入去解析源码来实现更加customize的功能。更何况现今大量框架如雨后春笋，为不迷失在前端战国乱世之中，返璞归真才是使用任何框架的工程师的必经之路。  </p>
