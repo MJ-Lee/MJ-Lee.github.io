@@ -4,7 +4,7 @@
   <subtitle><![CDATA[前端工程师，全栈尝试者，技术，英文，生活]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zhenghao.work/"/>
-  <updated>2015-12-16T14:48:57.000Z</updated>
+  <updated>2015-12-17T15:28:03.000Z</updated>
   <id>http://zhenghao.work/</id>
   
   <author>
@@ -13,6 +13,95 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[padding的妙用，用css画自适应的正方形]]></title>
+    <link href="http://zhenghao.work/2015/12/17/padding-feature/"/>
+    <id>http://zhenghao.work/2015/12/17/padding-feature/</id>
+    <published>2015-12-17T14:32:01.000Z</published>
+    <updated>2015-12-17T15:28:03.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><p>在css2关于padding的规范有一个容易不忽略的属性，描述如下</p>
+<blockquote>
+<p><code>&lt;percentage&gt;</code> The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’padding-bottom’. If the containing block’s width depends on this element, then the resulting layout is undefined in CSS 2.1.</p>
+</blockquote>
+<p>意思是说padding的百分数值是根据其元素包含块containing block的width决定的。即padding的100%=包含块containing block的宽度。</p>
+<h2 id="u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62"><a href="#u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62" class="headerlink" title="妙用-自适应的正方形"></a>妙用-自适应的正方形</h2><p>这个属性隐藏的比较深，一般来说没有应用到它的时候。而它的一个妙用是来画自适应的正方形。  </p>
+<p>一个通常用js的做法来画正方形的方式是获取自适应元素的宽度，再设置等宽的高度。  </p>
+<p>下面说说如何用css里这个神奇的padding来画自适应的正方形。至于它在现实中的使用意义我不想讨论，不过博主之前确实被问住了（知识面宽广也有点弊端，就是对这种细节可能钻的不深，所以放在这里补补。。。不过话说回来这确实太片面了，csstrick里还有人用div画五角星呢，这真的有必要么。。。）</p>
+<h3 id="u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F"><a href="#u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F" class="headerlink" title="方法一，最普通的方式"></a>方法一，最普通的方式</h3><pre><code>.box {
+    width: 100%;
+    background-color: red;
+}
+
+.square{
+    padding-top: 100%; // padding-bottom:100%; 也是奏效的。
+}
+
+
+
+&lt;div class=&quot;box&quot;&gt;
+
+  &lt;div class=&quot;square&quot;&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre><p>如果直接放在body下，上述代码会生成高度为屏幕宽度的红色正方形。</p>
+<p>按css2规范中得解释，<code>.square</code>的containing block为<code>.box</code>元素， 而padding得percentage的值为其containing block原素的宽（也就是<code>.box</code>元素的宽）。所以这就是为什么利用子元素的padding能生成自适应的正方形。</p>
+<h3 id="u65B9_u6CD5_u4E8C_uFF0C__u4F7F_u7528content"><a href="#u65B9_u6CD5_u4E8C_uFF0C__u4F7F_u7528content" class="headerlink" title="方法二， 使用content"></a>方法二， 使用content</h3><pre><code>.box {
+    background-color: red;
+    width: 100%;
+}
+
+.box::before {
+    content: &quot;&quot;;
+    display: block;
+    padding-top: 100%;
+}
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p>其原理参见方法一，只不过是用content生成一个伪块。</p>
+<h3 id="u65B9_u6CD5_u4E09_uFF0C_u76F4_u63A5_u7528padding"><a href="#u65B9_u6CD5_u4E09_uFF0C_u76F4_u63A5_u7528padding" class="headerlink" title="方法三，直接用padding"></a>方法三，直接用padding</h3><pre><code>.box {
+    width: 100%;
+    padding-top:100%;
+    background-color: red;
+}
+&lt;div class=&quot;box&quot;&gt;
+&lt;/div&gt;
+</code></pre><p>这个原理依旧离不开规范的定义，只不过这里的padding的高度为根元素的宽度。</p>
+<h2 id="u6269_u5C55"><a href="#u6269_u5C55" class="headerlink" title="扩展"></a>扩展</h2><p>在div内部放入子元素，这方法就不灵了。没关系，在方法二的基础上做如下修改，用absolute position来hacking。</p>
+<pre><code>#child {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;     
+}
+.box{
+    ...
+    position:relative; // 不加这句，会使 #child 找不到 .box 包含块
+    ...
+}
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div id=&quot;child&quot;&gt;放点东西进来&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>虽然说上面列出了几种方法，但其本质都是利用了padding的percentage而已。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文">]]>
+    </summary>
+    
+      <category term="css" scheme="http://zhenghao.work/tags/css/"/>
+    
+      <category term="square" scheme="http://zhenghao.work/tags/square/"/>
+    
+      <category term="正方形" scheme="http://zhenghao.work/tags/%E6%AD%A3%E6%96%B9%E5%BD%A2/"/>
+    
+      <category term="自适应" scheme="http://zhenghao.work/tags/%E8%87%AA%E9%80%82%E5%BA%94/"/>
+    
+      <category term="规范" scheme="http://zhenghao.work/tags/%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[diasplay与position、float之间的关系]]></title>
@@ -50,6 +139,27 @@
       <category term="布局" scheme="http://zhenghao.work/tags/%E5%B8%83%E5%B1%80/"/>
     
       <category term="规范" scheme="http://zhenghao.work/tags/%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JS核心-原型链-从实例角度看原型链]]></title>
+    <link href="http://zhenghao.work/2015/12/12/JS%E6%A0%B8%E5%BF%83-%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://zhenghao.work/2015/12/12/JS核心-原型链/</id>
+    <published>2015-12-12T13:45:11.000Z</published>
+    <updated>2015-12-17T14:34:35.000Z</updated>
+    <content type="html"><![CDATA[<p>待续</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>待续</p>
+]]>
+    </summary>
+    
+      <category term="javascript" scheme="http://zhenghao.work/tags/javascript/"/>
+    
+      <category term="js" scheme="http://zhenghao.work/tags/js/"/>
+    
+      <category term="prototype" scheme="http://zhenghao.work/tags/prototype/"/>
     
   </entry>
   

@@ -3,29 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>diasplay与position、float之间的关系 | Michael&#39;s tech blog</title>
+  <title>padding的妙用，用css画自适应的正方形 | Michael&#39;s tech blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS2中的规范原文
-9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+  <meta name="description" content="CSS2中的规范原文在css2关于padding的规范有一个容易不忽略的属性，描述如下
 
-If ’dis">
+&amp;lt;percentage&amp;gt; The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’pa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="diasplay与position、float之间的关系">
-<meta property="og:url" content="http://zhenghao.work/2015/12/15/relationship-layout/index.html">
+<meta property="og:title" content="padding的妙用，用css画自适应的正方形">
+<meta property="og:url" content="http://zhenghao.work/2015/12/17/padding-feature/index.html">
 <meta property="og:site_name" content="Michael's tech blog">
-<meta property="og:description" content="CSS2中的规范原文
-9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+<meta property="og:description" content="CSS2中的规范原文在css2关于padding的规范有一个容易不忽略的属性，描述如下
 
-If ’dis">
-<meta property="og:image" content="http://zhenghao.work/img/relation-layout-compute-table.png">
-<meta property="og:image" content="http://zhenghao.work/img/relation-layout-flow.png">
-<meta property="og:updated_time" content="2015-12-16T14:48:57.000Z">
+&amp;lt;percentage&amp;gt; The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’pa">
+<meta property="og:updated_time" content="2015-12-17T15:28:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="diasplay与position、float之间的关系">
-<meta name="twitter:description" content="CSS2中的规范原文
-9.7 Relationships between ’display’, ’position’, and ’float’The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  
+<meta name="twitter:title" content="padding的妙用，用css画自适应的正方形">
+<meta name="twitter:description" content="CSS2中的规范原文在css2关于padding的规范有一个容易不忽略的属性，描述如下
 
-If ’dis">
+&amp;lt;percentage&amp;gt; The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’pa">
   
     <link rel="alternative" href="/atom.xml" title="Michael&#39;s tech blog" type="application/atom+xml">
   
@@ -170,11 +165,11 @@ If ’dis">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-relationship-layout" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-padding-feature" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/15/relationship-layout/" class="article-date">
-  	<time datetime="2015-12-15T08:32:19.000Z" itemprop="datePublished">2015-12-15</time>
+      <a href="/2015/12/17/padding-feature/" class="article-date">
+  	<time datetime="2015-12-17T14:32:01.000Z" itemprop="datePublished">2015-12-17</time>
 </a>
     </div>
   
@@ -187,7 +182,7 @@ If ’dis">
         
   
     <h1 class="article-title" itemprop="name">
-      diasplay与position、float之间的关系
+      padding的妙用，用css画自适应的正方形
     </h1>
   
 
@@ -198,7 +193,7 @@ If ’dis">
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/layout/">layout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/standard/">standard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/布局/">布局</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/square/">square</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正方形/">正方形</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/自适应/">自适应</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -208,22 +203,72 @@ If ’dis">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><blockquote>
-<p>9.7 Relationships between ’display’, ’position’, and ’float’<br>The three properties that affect box generation and layout — ’display’, ’position’, and ’float’ — interact as follows:  </p>
-<ol>
-<li>If ’display’ has the value ’none’, then ’position’ and ’float’ do not apply. In this case, the element generates no box.  </li>
-<li>Otherwise, if ’position’ has the value ’absolute’ or ’fixed’, the box is absolutely positioned, the computed value of ’float’ is ’none’, and display is set according to the table below. The position of the box will be determined by the ’top’, ’right’, ’bottom’ and ’left’ properties and the box’s containing block.  </li>
-<li>Otherwise, if ’float’ has a value other than ’none’, the box is floated and ’display’ is set according to the table below.  </li>
-<li>Otherwise, if the element is the root element, ’display’ is set according to the table below, except that it is undefined in CSS 2.1 whether a specified value of ’list-item’ becomes a computed value of ’block’ or ’list-item’.  </li>
-<li>Otherwise, the remaining ’display’ property values apply as specified.  </li>
-</ol>
+        <h2 id="CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><a href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587" class="headerlink" title="CSS2中的规范原文"></a>CSS2中的规范原文</h2><p>在css2关于padding的规范有一个容易不忽略的属性，描述如下</p>
+<blockquote>
+<p><code>&lt;percentage&gt;</code> The percentage is calculated with respect to the width of the generated box’s containing block [p. 128] , even for ’padding-top’ and ’padding-bottom’. If the containing block’s width depends on this element, then the resulting layout is undefined in CSS 2.1.</p>
 </blockquote>
-<p>display计算转换表：<br><img src="/img/relation-layout-compute-table.png" width="600" height="200" alt="display计算转换表" align="center"></p>
-<h2 id="u6211_u7684_u7406_u89E3"><a href="#u6211_u7684_u7406_u89E3" class="headerlink" title="我的理解"></a>我的理解</h2><p>1，如果 display：none，那么元素不生成盒子box；<br>2，display不为none，position为absolute或者fixed，那么display会根据下表设置。<br>3，display不为none，position为static或者relative，float不为none，那么display会根据下表设置。<br>4，display不为none，position为static或者relative，float为none，如果元素为根元素，那么display会根据下表设置。<br>5，display不为none，position为static或者relative，float为none，元素不为根元素，display为你设置的值。  </p>
-<p>码字看着太累了，做个流程图！<br><img src="/img/relation-layout-flow.png" width="600" height="500" alt="display计算流程图" align="center"></p>
-<p>另外这个display对于寻找containing block还是有一定影响的。<br>看这个容易被大家忽视的例子：  </p>
-<pre><code>&lt;P id=&quot;p2&quot;&gt;This is text &lt;EM id=&quot;em1&quot;&gt; in the&lt;STRONG id=&quot;strong1&quot;&gt;second&lt;/STRONG&gt; paragraph.&lt;/EM&gt;&lt;/P&gt;
-</code></pre><p>在没有做任何修改时，<code>&lt;EM&gt;</code>和<code>&lt;STRONG&gt;</code>的包含块containing block都是<code>&lt;p&gt;</code>；<br>当给<code>&lt;EM&gt;</code>添加了position:absolute;以后<code>&lt;STRONG&gt;</code>的包含块containing block变成了<code>&lt;EM&gt;</code>；<br>这是因为根据规则2，<code>&lt;EM&gt;</code>的display属性发生了改变。</p>
+<p>意思是说padding的百分数值是根据其元素包含块containing block的width决定的。即padding的100%=包含块containing block的宽度。</p>
+<h2 id="u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62"><a href="#u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62" class="headerlink" title="妙用-自适应的正方形"></a>妙用-自适应的正方形</h2><p>这个属性隐藏的比较深，一般来说没有应用到它的时候。而它的一个妙用是来画自适应的正方形。  </p>
+<p>一个通常用js的做法来画正方形的方式是获取自适应元素的宽度，再设置等宽的高度。  </p>
+<p>下面说说如何用css里这个神奇的padding来画自适应的正方形。至于它在现实中的使用意义我不想讨论，不过博主之前确实被问住了（知识面宽广也有点弊端，就是对这种细节可能钻的不深，所以放在这里补补。。。不过话说回来这确实太片面了，csstrick里还有人用div画五角星呢，这真的有必要么。。。）</p>
+<h3 id="u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F"><a href="#u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F" class="headerlink" title="方法一，最普通的方式"></a>方法一，最普通的方式</h3><pre><code>.box {
+    width: 100%;
+    background-color: red;
+}
+
+.square{
+    padding-top: 100%; // padding-bottom:100%; 也是奏效的。
+}
+
+
+
+&lt;div class=&quot;box&quot;&gt;
+
+  &lt;div class=&quot;square&quot;&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre><p>如果直接放在body下，上述代码会生成高度为屏幕宽度的红色正方形。</p>
+<p>按css2规范中得解释，<code>.square</code>的containing block为<code>.box</code>元素， 而padding得percentage的值为其containing block原素的宽（也就是<code>.box</code>元素的宽）。所以这就是为什么利用子元素的padding能生成自适应的正方形。</p>
+<h3 id="u65B9_u6CD5_u4E8C_uFF0C__u4F7F_u7528content"><a href="#u65B9_u6CD5_u4E8C_uFF0C__u4F7F_u7528content" class="headerlink" title="方法二， 使用content"></a>方法二， 使用content</h3><pre><code>.box {
+    background-color: red;
+    width: 100%;
+}
+
+.box::before {
+    content: &quot;&quot;;
+    display: block;
+    padding-top: 100%;
+}
+
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p>其原理参见方法一，只不过是用content生成一个伪块。</p>
+<h3 id="u65B9_u6CD5_u4E09_uFF0C_u76F4_u63A5_u7528padding"><a href="#u65B9_u6CD5_u4E09_uFF0C_u76F4_u63A5_u7528padding" class="headerlink" title="方法三，直接用padding"></a>方法三，直接用padding</h3><pre><code>.box {
+    width: 100%;
+    padding-top:100%;
+    background-color: red;
+}
+&lt;div class=&quot;box&quot;&gt;
+&lt;/div&gt;
+</code></pre><p>这个原理依旧离不开规范的定义，只不过这里的padding的高度为根元素的宽度。</p>
+<h2 id="u6269_u5C55"><a href="#u6269_u5C55" class="headerlink" title="扩展"></a>扩展</h2><p>在div内部放入子元素，这方法就不灵了。没关系，在方法二的基础上做如下修改，用absolute position来hacking。</p>
+<pre><code>#child {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;     
+}
+.box{
+    ...
+    position:relative; // 不加这句，会使 #child 找不到 .box 包含块
+    ...
+}
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div id=&quot;child&quot;&gt;放点东西进来&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>虽然说上面列出了几种方法，但其本质都是利用了padding的percentage而已。</p>
 
       
     </div>
@@ -232,13 +277,13 @@ If ’dis">
   
     
 <div class="copyright">
-  <p><span>本文标题:</span><a href="/2015/12/15/relationship-layout/">diasplay与position、float之间的关系</a></p>
+  <p><span>本文标题:</span><a href="/2015/12/17/padding-feature/">padding的妙用，用css画自适应的正方形</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 从巴黎回来 的个人博客">从巴黎回来</a></p>
-  <p><span>发布时间:</span>2015年12月15日 - 16时32分</p>
-  <p><span>最后更新:</span>2015年12月16日 - 22时48分</p>
+  <p><span>发布时间:</span>2015年12月17日 - 22时32分</p>
+  <p><span>最后更新:</span>2015年12月17日 - 23时28分</p>
   <p>
-    <span>原始链接:</span><a class="post-url" href="/2015/12/15/relationship-layout/" title="diasplay与position、float之间的关系">http://zhenghao.work/2015/12/15/relationship-layout/</a>
-    <span class="copy-path" data-clipboard-text="原文: http://zhenghao.work/2015/12/15/relationship-layout/　　作者: 从巴黎回来" title="点击复制文章链接">
+    <span>原始链接:</span><a class="post-url" href="/2015/12/17/padding-feature/" title="padding的妙用，用css画自适应的正方形">http://zhenghao.work/2015/12/17/padding-feature/</a>
+    <span class="copy-path" data-clipboard-text="原文: http://zhenghao.work/2015/12/17/padding-feature/　　作者: 从巴黎回来" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
@@ -252,16 +297,10 @@ If ’dis">
 
 <nav id="article-nav">
   
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="/2015/12/17/padding-feature/">
-        padding的妙用，用css画自适应的正方形
-      </a>
-    </div>
-  
   
     <div id="article-nav-older" class="article-nav-title">
-      <a href="/2015/12/12/JS核心-原型链/">
-        JS核心-原型链-从实例角度看原型链
+      <a href="/2015/12/15/relationship-layout/">
+        diasplay与position、float之间的关系
       </a>
     </div>
   
@@ -274,7 +313,7 @@ If ’dis">
 <!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
 <div id="toc" class="toc-article">
 <strong class="toc-title">文章目录</strong>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><span class="toc-number">1.</span> <span class="toc-text">CSS2中的规范原文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6211_u7684_u7406_u89E3"><span class="toc-number">2.</span> <span class="toc-text">我的理解</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS2_u4E2D_u7684_u89C4_u8303_u539F_u6587"><span class="toc-number">1.</span> <span class="toc-text">CSS2中的规范原文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5999_u7528-_u81EA_u9002_u5E94_u7684_u6B63_u65B9_u5F62"><span class="toc-number">2.</span> <span class="toc-text">妙用-自适应的正方形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u65B9_u6CD5_u4E00_uFF0C_u6700_u666E_u901A_u7684_u65B9_u5F0F"><span class="toc-number">2.1.</span> <span class="toc-text">方法一，最普通的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65B9_u6CD5_u4E8C_uFF0C__u4F7F_u7528content"><span class="toc-number">2.2.</span> <span class="toc-text">方法二， 使用content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65B9_u6CD5_u4E09_uFF0C_u76F4_u63A5_u7528padding"><span class="toc-number">2.3.</span> <span class="toc-text">方法三，直接用padding</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6269_u5C55"><span class="toc-number">3.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
 </div>
 <style type="text/css">
   .left-col .switch-btn {
@@ -329,7 +368,7 @@ If ’dis">
   
   <div class="duoshuo" id="comments">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="relationship-layout" data-title="diasplay与position、float之间的关系" data-url="http://zhenghao.work/2015/12/15/relationship-layout/"></div>
+	<div class="ds-thread" data-thread-key="padding-feature" data-title="padding的妙用，用css画自适应的正方形" data-url="http://zhenghao.work/2015/12/17/padding-feature/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -367,16 +406,14 @@ If ’dis">
 
   
   
-    
     <div  class="post-nav-button">
-    <a href="/2015/12/17/padding-feature/" title="上一篇: padding的妙用，用css画自适应的正方形">
-    <i class="fa fa-angle-left"></i>
-    </a>
-    <a href="/2015/12/12/JS核心-原型链/" title="下一篇: JS核心-原型链-从实例角度看原型链">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="/2015/12/15/relationship-layout/" title="下一篇: diasplay与position、float之间的关系">
     <i class="fa fa-angle-right"></i>
     </a>
     </div>
   
+    
 
 
 
